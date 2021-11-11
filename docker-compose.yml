@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+
+  mysql-iara:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: iara
+    ports:
+      - "3308:3306"
+    volumes:
+      - db:/var/lib/mysql
+
+  backend-iara:    
+    depends_on:
+      - mysql-iara
+    build: ./
+    image: iara-backend    
+    ports:      
+      - "8081:8081"
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url"  : "jdbc:mysql://mysql-iara:3306/iara",
+        "spring.datasource.username" : "root",
+        "spring.datasource.password" : "password",
+        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
+        "spring.jpa.hibernate.ddl-auto" : "none"
+      }'
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+
+volumes:
+  db:

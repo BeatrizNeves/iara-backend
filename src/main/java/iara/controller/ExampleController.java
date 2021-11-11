@@ -36,4 +36,9 @@ public class ExampleController {
 	public ResponseEntity<?> getById(@PathVariable(required = true) Long exampleId) {
 		return ResponseEntity.ok(service.findById(exampleId).get());
 	}
+
+	@GetMapping("/oi")
+	public String teste() {
+		return "tchau de dentro do docker";
+	}
 }
