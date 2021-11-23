@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "c813e86c-0651-4139-ab9b-85c9f1c769e9",
+		"name": "Iara Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Exemplo",
+			"item": [
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/example/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"example",
+								"1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "galera de cowboy",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/example/save",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"example",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Teste",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Filter by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/example/filterByName/teste",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"example",
+								"filterByName",
+								"teste"
+							],
+							"query": [
+								{
+									"key": "teste",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
