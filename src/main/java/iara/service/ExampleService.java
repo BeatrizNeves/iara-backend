@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import iara.model.ExampleEntity;
@@ -20,8 +21,12 @@ public class ExampleService {
 		return repository.save(exampleEntity);
 	}
 	
-	public List<ExampleEntity> findAll(ExampleEntity exampleEntity) {
+	public List<ExampleEntity> findAll() {
 		return repository.findAll();
+	}
+	
+	public List<ExampleEntity> findAll(Specification<ExampleEntity> filter) {
+		return repository.findAll(filter);
 	}
 	
 	public Optional<ExampleEntity> findById(Long id) {
