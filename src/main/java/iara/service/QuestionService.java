@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import iara.model.QuestionEntity;
@@ -20,7 +21,11 @@ private final QuestionRepository repository;
 		return repository.save(questionEntity);
 	}
 	
-	public List<QuestionEntity> findAll(QuestionEntity questionEntity) {
+	public List<QuestionEntity> findAll() {
+		return repository.findAll();
+	}
+	
+	public List<QuestionEntity> findAll(Specification<QuestionEntity> filter) {
 		return repository.findAll();
 	}
 	

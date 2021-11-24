@@ -26,7 +26,8 @@ public class QuestionEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_question;
+	@Column(name = "id_question")
+	private Long id;
 	
 	@Column(nullable=true)
 	private String title;
@@ -36,9 +37,6 @@ public class QuestionEntity {
 	
 	@Column(nullable=true)
 	private String content;
-	
-	@Column(nullable=true)
-	private int id;	
 	
 	@ManyToOne
 	@MapsId("id_class")
