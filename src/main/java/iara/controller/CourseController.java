@@ -20,4 +20,9 @@ public class CourseController {
 	public ResponseEntity<?> getById(@PathVariable(required = true) Long courseId) {
 		return ResponseEntity.ok(service.findById(courseId).get());
 	}
+	
+	@GetMapping("/popular")
+	public ResponseEntity<?> getPopularCourses() {
+		return ResponseEntity.ok(service.getPopularCourses());
+	}
 }

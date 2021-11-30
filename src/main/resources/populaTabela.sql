@@ -261,6 +261,12 @@ VALUES ("Professor Risco", "professor", "logo", "Professor especializado em jazz
 INSERT INTO user (name, role, logo, bio)
 VALUES ("Jorge Aluno", "aluno", "logo", "Comecei a tocar guitarra em 2015 e quero aprender novos estilos");
 
+INSERT INTO user (name, role, logo, bio)
+VALUES ("Lucas", "aluno", "logo", "Gosto de instrumentos de percussão e quero me aprimorar na bateria.");
+
+INSERT INTO user (name, role, logo, bio)
+VALUES ("Isabelle", "aluno", "logo", "Sou muito fã de guitarristas e sou inspirada em meus ídolos, um dia irei ser capaz de tocar como eles.");
+
 -- popula tabela user_has_achievement
 
 INSERT INTO user_has_achievement (User_id_user, achievement_id_achievement)
@@ -288,6 +294,24 @@ VALUES (1, 3);
 
 INSERT INTO user_has_course (User_id_user, Course_id_course)
 VALUES (1, 4);
+
+INSERT INTO user_has_course (User_id_user, Course_id_course)
+VALUES (2, 4);
+
+INSERT INTO user_has_course (User_id_user, Course_id_course)
+VALUES (3, 4);
+
+INSERT INTO user_has_course (User_id_user, Course_id_course)
+VALUES (2, 1);
+
+INSERT INTO user_has_course (User_id_user, Course_id_course)
+VALUES (3, 1);
+
+INSERT INTO user_has_course (User_id_user, Course_id_course)
+VALUES (3, 2);
+
+INSERT INTO user_has_course (User_id_user, Course_id_course)
+VALUES (4, 4);
 
 -- popula user_has_class
 
