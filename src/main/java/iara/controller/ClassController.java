@@ -11,18 +11,13 @@ import iara.service.CourseService;
 
 @RestController
 @RequestMapping("/course")
-public class CourseController {
+public class ClassController {
 	
 	@Autowired
 	private CourseService service;
 	
-	@GetMapping(value = {"", "/{courseId}"})
-	public ResponseEntity<?> getById(@PathVariable(required = true) Long courseId) {
-		return ResponseEntity.ok(service.findById(courseId).get());
-	}
-	
-	@GetMapping("/popular")
-	public ResponseEntity<?> getPopularCourses() {
-		return ResponseEntity.ok(service.getPopularCourses());
+	@GetMapping(value = {"", "/{classId}"})
+	public ResponseEntity<?> getById(@PathVariable(required = true) Long classId) {
+		return ResponseEntity.ok(service.findById(classId).get());
 	}
 }
