@@ -21,16 +21,16 @@ VALUES ("MONSTRO SAGRADO!", "Você concluiu TODOS os cursos!");
 -- popula tabela course
 
 INSERT INTO course (id_user_author, name, duration, difficulty, description, icon)
-VALUES (1, "Harmonia", "20h", "difícil", "Harmonia funcional e tudo mais.", "ícone");
+VALUES (1, "Harmonia", "Curto", "Difícil", "Harmonia funcional e tudo mais.", "ícone");
 
 INSERT INTO course (id_user_author, name, duration, difficulty, description, icon)
-VALUES (1, "Escalas", "12h", "fácil", "Escalas maiores e menores.", "ícone");
+VALUES (1, "Escalas", "Curto", "Fácil", "Escalas maiores e menores.", "ícone");
 
 INSERT INTO course (id_user_author, name, duration, difficulty, description, icon)
-VALUES (1, "Ritmo", "12h", "médio", "Como ler e criar ritmos.", "ícone");
+VALUES (1, "Ritmo", "Médio", "Médio", "Como ler e criar ritmos.", "ícone");
 
 INSERT INTO course (id_user_author, name, duration, difficulty, description, icon)
-VALUES (2, "Leitura de partitura", "20h", "médio", "Encontrar notas e enteder ritmo", "ícone");
+VALUES (2, "Leitura de partitura", "Longo", "Médio", "Encontrar notas e enteder ritmo", "ícone");
 
 -- popula tabela class
 

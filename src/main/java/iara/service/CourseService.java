@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import iara.model.CourseEntity;
@@ -25,6 +26,10 @@ private final UserHasCourseRepository userHasCourseRepository;
 	
 	public List<CourseEntity> findAll() {
 		return repository.findAll();
+	}
+	
+	public List<CourseEntity> findAll(Specification<CourseEntity> filter) {
+		return repository.findAll(filter);
 	}
 	
 	public Optional<CourseEntity> findById(Long id) {
