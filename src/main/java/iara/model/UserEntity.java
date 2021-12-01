@@ -5,9 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -20,24 +17,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "Class")
-public class ClassEntity {
-
+@Table(name = "User")
+public class UserEntity {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_class;
+	private Long id_user;
 	
 	@Column(nullable=true)
 	private String name;
 	
 	@Column(nullable=true)
-	private String difficulty;
+	private String role;
 	
 	@Column(nullable=true)
-	private int index;
+	private String logo;
 	
-	@ManyToOne
-	@MapsId("id_course")
-	@JoinColumn(name="Course_id_course")
-	private CourseEntity course;
+	@Column(nullable=true)
+	private String bio;
+
 }
