@@ -3,20 +3,16 @@ package iara.model;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class QuestionResponse {
+public class CompleteCourseResponse {
 	
-	private QuestionEntity question;
+	private CourseEntity courseInfo;
 	
-	private List<AlternativeEntity> alternatives;
-	
-	private Long answeredAlternative;
+	private List<ClassEntity> classes;
 
 }
