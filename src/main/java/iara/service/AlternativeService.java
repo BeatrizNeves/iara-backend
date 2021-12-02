@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import iara.model.AlternativeEntity;
+import iara.model.QuestionEntity;
 import iara.repository.AlternativeRepository;
 import lombok.AllArgsConstructor;
 
@@ -20,8 +22,8 @@ private final AlternativeRepository repository;
 		return repository.save(alternativeEntity);
 	}
 	
-	public List<AlternativeEntity> findAll(AlternativeEntity alternativeEntity) {
-		return repository.findAll();
+	public List<AlternativeEntity> findAll(Specification<AlternativeEntity> filter) {
+		return repository.findAll(filter);
 	}
 	
 	public Optional<AlternativeEntity> findById(Long id) {

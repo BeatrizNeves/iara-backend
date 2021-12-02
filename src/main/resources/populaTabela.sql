@@ -64,66 +64,66 @@ VALUES(9, "Clave de fá", "fácil", 2, 4);
 -- popula a tabela paragraph
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Existem 3 principais funções. Falaremos delas nas proximas aulas", "image", 1, 1);
+VALUES ("Existem 3 principais funções. Falaremos delas nas proximas aulas", "https://picsum.photos/500", 1, 1);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Transmite a sensação de repouso e finalização", "image", 2, 1);
+VALUES ("Transmite a sensação de repouso e finalização", "https://picsum.photos/500", 2, 1);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Transmite também a sensação de estabilidade", "image", 2, 1);
+VALUES ("Transmite também a sensação de estabilidade", "https://picsum.photos/500", 2, 1);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Transmite a sensação de caminhar", "image", 3, 1);
+VALUES ("Transmite a sensação de caminhar", "https://picsum.photos/500", 3, 1);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Transmite a sensação de tensão", "image", 4, 1);
+VALUES ("Transmite a sensação de tensão", "https://picsum.photos/500", 4, 1);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("É dada pelos intervalos: T T St T T T St", "image", 5, 2);
+VALUES ("É dada pelos intervalos: T T St T T T St", "https://picsum.photos/500", 5, 2);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Possui características alegres", "image", 5, 2);
+VALUES ("Possui características alegres", "https://picsum.photos/500", 5, 2);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Seu 6 grau é sua relativa menor", "image", 5, 2);
+VALUES ("Seu 6 grau é sua relativa menor", "https://picsum.photos/500", 5, 2);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("É dada pelos intervalos: T St T T St T T", "image", 6, 2);
+VALUES ("É dada pelos intervalos: T St T T St T T", "https://picsum.photos/500", 6, 2);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Possui características tristes", "image", 6, 2);
+VALUES ("Possui características tristes", "https://picsum.photos/500", 6, 2);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("É 1/4 do tempo de um compasso 4/4. Tem a seguinte figura", "image", 7, 3);
+VALUES ("É 1/4 do tempo de um compasso 4/4. Tem a seguinte figura", "https://picsum.photos/500", 7, 3);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Indica que o Sol está na 2 linha. Tem a seguinte forma", "image", 8, 4);
+VALUES ("Indica que o Sol está na 2 linha. Tem a seguinte forma", "https://picsum.photos/500", 8, 4);
 
 INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Indica que o Fá está na 4 linha. Tem a seguinte forma", "image", 9, 4);
+VALUES ("Indica que o Fá está na 4 linha. Tem a seguinte forma", "https://picsum.photos/500", 9, 4);
 
 -- popula tabela question
 
 INSERT INTO question
-VALUES (1, "Questão 1", "image", "Qual das seguintes escalas é maior?", 5, 2, 1);
+VALUES (1, "Questão 1", "https://picsum.photos/500", "Qual das seguintes escalas é maior?", 5, 2, 1);
 
 INSERT INTO question
-VALUES (2, "Questão 2", "image", "Qual das seguintes representa um Sol maior?", 5, 2, 2);
+VALUES (2, "Questão 2", "https://picsum.photos/500", "Qual das seguintes representa um Sol maior?", 5, 2, 2);
 
 INSERT INTO question
-VALUES (3, "Questão 1", "image", "Qual das seguintes escalas é menor?", 6, 2, 1);
+VALUES (3, "Questão 1", "https://picsum.photos/500", "Qual das seguintes escalas é menor?", 6, 2, 1);
 
 INSERT INTO question
-VALUES (4, "Questão 1", "image", "Qual destas notas é um Sol?", 8, 4, 1);
+VALUES (4, "Questão 1", "https://picsum.photos/500", "Qual destas notas é um Sol?", 8, 4, 1);
 
 INSERT INTO question
-VALUES (5, "Questão 2", "image", "Qual destas notas é um Dó?", 8, 4, 2);
+VALUES (5, "Questão 2", "https://picsum.photos/500", "Qual destas notas é um Dó?", 8, 4, 2);
 
 INSERT INTO question
-VALUES (6, "Questão 1", "image", "Qual destas notas é um Sol?", 9, 4, 1);
+VALUES (6, "Questão 1", "https://picsum.photos/500", "Qual destas notas é um Sol?", 9, 4, 1);
 
 INSERT INTO question
-VALUES (7, "Questão 2", "image", "Qual destas notas é um Dó?", 9, 4, 2);
+VALUES (7, "Questão 2", "https://picsum.photos/500", "Qual destas notas é um Dó?", 9, 4, 2);
 
 -- popula tabela alternative
 

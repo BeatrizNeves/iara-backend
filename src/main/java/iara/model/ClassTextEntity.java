@@ -22,17 +22,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "Question")
+@Table(name = "Paragraph")
 
-public class QuestionEntity {
+public class ClassTextEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_question")
+	@Column(name = "id_paragraph")
 	private Long id;
-	
-	@Column(nullable=true)
-	private String title;
 	
 	@Column(nullable=true)
 	private String image;
@@ -43,7 +40,6 @@ public class QuestionEntity {
 	@ManyToOne
 	@MapsId("id_class")
 	@JoinColumn(name="Class_id_class")
-	@JsonIgnore
 	private ClassEntity classEntity;
 	
 }
