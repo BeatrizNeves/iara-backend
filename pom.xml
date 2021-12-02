@@ -14,7 +14,7 @@
 	<name>iara</name>
 	<description>Iara project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -53,15 +53,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-compiler-plugin</artifactId>
-			    <version>3.8.4</version>
-			    <configuration>
-			        <source>1.7</source>
-			        <target>1.7</target>
-			    </configuration>
 			</plugin>
 		</plugins>
 	</build>
