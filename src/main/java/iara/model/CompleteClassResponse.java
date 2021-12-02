@@ -11,6 +11,8 @@ import lombok.Data;
 @Builder
 public class CompleteClassResponse {
 	
+	private ClassEntity classInfo;
+	
 	private List<ClassTextEntity> texts;
 
 	private List<QuestionResponse> questions;
