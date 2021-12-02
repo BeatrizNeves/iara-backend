@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  mysql-iara:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: iara
+    ports:
+      - "3308:3306"
