@@ -1,10 +1,13 @@
 package iara.filter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.criteria.Predicate;
 
 import org.springframework.data.jpa.domain.Specification;
 
-import iara.model.ExampleEntity;
+import iara.model.AlternativeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,17 +19,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Builder
-public class ExampleFilter extends RepositoryFilter<ExampleEntity> {
+public class AlternativeFilter extends RepositoryFilter<AlternativeEntity> {
 	
-	private String name;
+	private Long questionId;
 	
 	@Override
-    public Specification<ExampleEntity> get() {
+    public Specification<AlternativeEntity> get() {
         return (root, query, cb) -> {
+        	Set<Long> questionIdList = new HashSet<>(); 
+        	questionIdList.add(questionId);
             
             query.orderBy(cb.asc(root.get("id")));
             
-            Predicate genericTextFilter = like(cb, root.get("name"), name);
+            Predicate genericTextFilter = in(cb, root.join("questionEntity").get("id"), questionIdList);
             
             return cb.and(genericTextFilter);
         };

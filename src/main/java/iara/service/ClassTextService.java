@@ -7,29 +7,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import iara.model.ExampleEntity;
-import iara.repository.ExampleRepository;
+import iara.model.ClassTextEntity;
+import iara.repository.ClassTextRepository;
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor(onConstructor_ = {@Autowired})
-public class ExampleService {
+public class ClassTextService {
 	
-	private final ExampleRepository repository;
+private final ClassTextRepository repository;
 	
-	public ExampleEntity save(ExampleEntity exampleEntity) {
-		return repository.save(exampleEntity);
+	public ClassTextEntity save(ClassTextEntity classTextEntity) {
+		return repository.save(classTextEntity);
 	}
 	
-	public List<ExampleEntity> findAll() {
+	public List<ClassTextEntity> findAll() {
 		return repository.findAll();
 	}
 	
-	public List<ExampleEntity> findAll(Specification<ExampleEntity> filter) {
+	public List<ClassTextEntity> findAll(Specification<ClassTextEntity> filter) {
 		return repository.findAll(filter);
 	}
 	
-	public Optional<ExampleEntity> findById(Long id) {
+	public Optional<ClassTextEntity> findById(Long id) {
 		return repository.findById(id);
 	}
 }

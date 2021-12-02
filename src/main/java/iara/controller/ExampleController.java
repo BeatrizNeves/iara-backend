@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import iara.converter.ExampleConverter;
+import iara.filter.ExampleFilter;
 import iara.model.ExampleEntity;
 import iara.model.ExampleRequest;
 import iara.service.ExampleService;
@@ -35,6 +36,16 @@ public class ExampleController {
 	@GetMapping(value = {"", "/{exampleId}"})
 	public ResponseEntity<?> getById(@PathVariable(required = true) Long exampleId) {
 		return ResponseEntity.ok(service.findById(exampleId).get());
+	}
+	
+
+
+	@GetMapping("/filterByName/{name}")
+	public ResponseEntity<?> filterByName(@PathVariable(required = true) String name) {
+		
+		ExampleFilter filter = ExampleFilter.builder().name(name).build();
+		
+		return ResponseEntity.ok(service.findAll(filter.get()));
 	}
 
 	@GetMapping("/oi")

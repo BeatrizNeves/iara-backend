@@ -7,29 +7,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import iara.model.ExampleEntity;
-import iara.repository.ExampleRepository;
+import iara.model.UserValidationEntity;
+import iara.repository.UserValidationRepository;
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor(onConstructor_ = {@Autowired})
-public class ExampleService {
+public class UserValidationService {
 	
-	private final ExampleRepository repository;
+	private final UserValidationRepository repository;
 	
-	public ExampleEntity save(ExampleEntity exampleEntity) {
+	public UserValidationEntity save(UserValidationEntity exampleEntity) {
 		return repository.save(exampleEntity);
 	}
 	
-	public List<ExampleEntity> findAll() {
+	public List<UserValidationEntity> findAll() {
 		return repository.findAll();
 	}
 	
-	public List<ExampleEntity> findAll(Specification<ExampleEntity> filter) {
+	public List<UserValidationEntity> findAll(Specification<UserValidationEntity> filter) {
 		return repository.findAll(filter);
 	}
 	
-	public Optional<ExampleEntity> findById(Long id) {
+	public Optional<UserValidationEntity> findById(Long id) {
 		return repository.findById(id);
 	}
 }
