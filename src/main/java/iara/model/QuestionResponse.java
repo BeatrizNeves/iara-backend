@@ -16,5 +16,7 @@ public class QuestionResponse {
 	private QuestionEntity question;
 	
 	private List<AlternativeEntity> alternatives;
+	
+	private Long answeredAlternative;
 
 }

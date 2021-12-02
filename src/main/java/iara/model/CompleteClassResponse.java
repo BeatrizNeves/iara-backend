@@ -22,8 +22,8 @@ public class CompleteClassResponse {
 		texts = new ArrayList<>();
 	}
 	
-	public void addQuestion(QuestionEntity question, List<AlternativeEntity> alternatives) {
-		QuestionResponse questionResponse = new QuestionResponse(question, alternatives);
+	public void addQuestion(QuestionEntity question, List<AlternativeEntity> alternatives, Long answeredAlternative) {
+		QuestionResponse questionResponse = new QuestionResponse(question, alternatives, answeredAlternative);
 		questions.add(questionResponse);
 	}
 	
