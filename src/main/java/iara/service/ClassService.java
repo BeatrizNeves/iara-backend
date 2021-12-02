@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import iara.filter.UserHasCourseFilter;
@@ -29,9 +30,15 @@ private final UserHasCourseRepository userHasCourseRepository;
 		return repository.save(classEntity);
 	}
 	
-	public List<ClassEntity> findAll(ClassEntity classEntity) {
+	public List<ClassEntity> findAll() {
 		return repository.findAll();
 	}
+
+	
+	public List<ClassEntity> findAll(Specification<ClassEntity> filter) {
+		return repository.findAll(filter);
+	}
+	
 	
 	public Optional<ClassEntity> findById(Long id) {
 		return repository.findById(id);

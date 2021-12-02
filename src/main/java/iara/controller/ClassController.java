@@ -27,7 +27,6 @@ import iara.model.QuestionEntity;
 import iara.model.UserHasAnsweredEntity;
 import iara.model.UserHasAnsweredRequest;
 import iara.model.UserHasClassEntity;
-import iara.repository.UserHasAnsweredRepository;
 import iara.filter.AlternativeFilter;
 import iara.service.AlternativeService;
 import iara.service.ClassService;
