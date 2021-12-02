@@ -26,7 +26,7 @@ private final QuestionRepository repository;
 	}
 	
 	public List<QuestionEntity> findAll(Specification<QuestionEntity> filter) {
-		return repository.findAll();
+		return repository.findAll(filter);
 	}
 	
 	public Optional<QuestionEntity> findById(Long id) {

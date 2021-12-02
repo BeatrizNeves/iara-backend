@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,7 +28,8 @@ public class AlternativeEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_alternative;
+	@Column(name = "id_alternative")
+	private Long id;
 	
 	@Column(nullable=true)
 	private String text;
@@ -37,6 +40,7 @@ public class AlternativeEntity {
 	@ManyToOne
 	@MapsId("id_question")
 	@JoinColumn(name="Question_id_question")
-	private QuestionEntity question;
+	@JsonIgnore
+	private QuestionEntity questionEntity;
 	
 }

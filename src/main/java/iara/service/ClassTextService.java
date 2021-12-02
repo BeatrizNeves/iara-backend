@@ -26,7 +26,7 @@ private final ClassTextRepository repository;
 	}
 	
 	public List<ClassTextEntity> findAll(Specification<ClassTextEntity> filter) {
-		return repository.findAll();
+		return repository.findAll(filter);
 	}
 	
 	public Optional<ClassTextEntity> findById(Long id) {

@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -40,5 +42,6 @@ public class ClassEntity {
 	@ManyToOne
 	@MapsId("id_course")
 	@JoinColumn(name="Course_id_course")
+	@JsonIgnore
 	private CourseEntity course;
 }

@@ -7,7 +7,7 @@ import javax.persistence.criteria.Predicate;
 
 import org.springframework.data.jpa.domain.Specification;
 
-import iara.model.QuestionEntity;
+import iara.model.AlternativeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,18 +19,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Builder
-public class QuestionFilter extends RepositoryFilter<QuestionEntity> {
+public class AlternativeFilter extends RepositoryFilter<AlternativeEntity> {
 	
-	private Long classId;
+	private Long questionId;
 	
 	@Override
-    public Specification<QuestionEntity> get() {
+    public Specification<AlternativeEntity> get() {
         return (root, query, cb) -> {
-            query.orderBy(cb.asc(root.get("id")));
-            Set<Long> classIdList = new HashSet<Long>();
-            classIdList.add(classId);
+        	Set<Long> questionIdList = new HashSet<>(); 
+        	questionIdList.add(questionId);
             
-            Predicate genericTextFilter = in(cb, root.join("classEntity").get("id_class"), classIdList);
+            query.orderBy(cb.asc(root.get("id")));
+            
+            Predicate genericTextFilter = in(cb, root.join("questionEntity").get("id"), questionIdList);
             
             return cb.and(genericTextFilter);
         };

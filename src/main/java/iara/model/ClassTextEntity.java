@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,17 +22,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "ClassText")
+@Table(name = "Paragraph")
 
 public class ClassTextEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_classText")
+	@Column(name = "id_paragraph")
 	private Long id;
-	
-	@Column(nullable=true)
-	private String title;
 	
 	@Column(nullable=true)
 	private String image;
