@@ -6,8 +6,13 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import iara.filter.UserHasCourseFilter;
 import iara.model.ClassEntity;
+import iara.model.UserHasClassEntity;
+import iara.model.UserHasCourseEntity;
 import iara.repository.ClassRepository;
+import iara.repository.UserHasClassRepository;
+import iara.repository.UserHasCourseRepository;
 import lombok.AllArgsConstructor;
 
 @Service
@@ -15,6 +20,10 @@ import lombok.AllArgsConstructor;
 public class ClassService {
 	
 private final ClassRepository repository;
+
+private final UserHasClassRepository userHasClassRepository;
+
+private final UserHasCourseRepository userHasCourseRepository;
 	
 	public ClassEntity save(ClassEntity classEntity) {
 		return repository.save(classEntity);
@@ -26,5 +35,23 @@ private final ClassRepository repository;
 	
 	public Optional<ClassEntity> findById(Long id) {
 		return repository.findById(id);
+	}
+	
+	public UserHasClassEntity registerUser(Long userId, Long classId) {
+		UserHasClassEntity userHasClassEntity = new UserHasClassEntity();
+		userHasClassEntity.setUserId(userId);
+		userHasClassEntity.setClassId(classId);
+		
+		Optional<ClassEntity> classEntity = this.findById(classId);
+		UserHasCourseFilter filter = UserHasCourseFilter.builder().courseId(classEntity.get().getCourse().getId_course()).userId(userId).build();
+		
+		List<UserHasCourseEntity> userHasCourse = userHasCourseRepository.findAll(filter.get());
+		
+		if(userHasCourse.isEmpty()) {
+			return null;
+		}
+		
+		return userHasClassRepository.save(userHasClassEntity);
+		
 	}
 }

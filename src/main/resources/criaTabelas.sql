@@ -133,26 +133,25 @@ ENGINE = InnoDB;
 -- Table `iara`.`User_has_Class`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `iara`.`User_has_Class` (
+  `id_user_has_class` INT NOT NULL AUTO_INCREMENT,
   `User_id_user` INT NOT NULL,
   `Class_id_class` INT NOT NULL,
-  `Class_Course_id_course` INT NOT NULL,
   `completed` TINYINT NULL DEFAULT NULL,
-  `progress` INT NULL,
-  PRIMARY KEY (`User_id_user`, `Class_id_class`, `Class_Course_id_course`),
-  INDEX `fk_User_has_Class_Class1_idx` (`Class_id_class` ASC, `Class_Course_id_course` ASC) VISIBLE,
+  `progress` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id_user_has_class`),
+  INDEX `fk_User_has_Class_Class1_idx` (`Class_id_class` ASC) VISIBLE,
   INDEX `fk_User_has_Class_User1_idx` (`User_id_user` ASC) VISIBLE,
-  CONSTRAINT `fk_User_has_Class_User1`
+  CONSTRAINT `fk_User_has_Classe_User1`
     FOREIGN KEY (`User_id_user`)
     REFERENCES `iara`.`User` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_User_has_Class_Class1`
-    FOREIGN KEY (`Class_id_class` , `Class_Course_id_course`)
-    REFERENCES `iara`.`Class` (`id_class` , `Course_id_course`)
+    FOREIGN KEY (`Class_id_class`)
+    REFERENCES `iara`.`Class` (`id_class`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `iara`.`achievement`

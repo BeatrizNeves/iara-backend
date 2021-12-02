@@ -50,4 +50,9 @@ public class CourseController {
 		
 		return ResponseEntity.ok(service.findAll(filter.get()));
 	}
+	
+	@GetMapping("/registerUser/userId={userId}&courseId={courseId}")
+	public ResponseEntity<?> registerUser(@PathVariable(required = true) Long userId, @PathVariable(required = true) Long courseId) {
+		return ResponseEntity.ok(service.registerUser(userId, courseId));
+	}
 }

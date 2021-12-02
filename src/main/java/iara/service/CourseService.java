@@ -9,6 +9,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import iara.model.CourseEntity;
+import iara.model.UserHasCourseEntity;
 import iara.repository.CourseRepository;
 import iara.repository.UserHasCourseRepository;
 import lombok.AllArgsConstructor;
@@ -47,5 +48,14 @@ private final UserHasCourseRepository userHasCourseRepository;
 		}
 		
 		return courses;
+	}
+	
+	public UserHasCourseEntity registerUser(Long userId, Long courseId) {
+		UserHasCourseEntity userHasCourseEntity = new UserHasCourseEntity();
+		userHasCourseEntity.setUserId(userId);
+		userHasCourseEntity.setCourseId(courseId);
+		
+		return userHasCourseRepository.save(userHasCourseEntity);
+		
 	}
 }
