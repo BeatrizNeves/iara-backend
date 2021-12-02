@@ -332,3 +332,16 @@ VALUES (2, 8, 4, 1, 100);
 
 INSERT INTO user_has_class (User_id_user, Class_id_class, Class_Course_id_course, completed, progress)
 VALUES (2, 9, 4, 0, 0);
+
+
+INSERT INTO UserValidation (id_user_validation, username, password, User_id_user)
+VALUES (1, "sosuer", "gabrilquichida", 1);
+
+INSERT INTO UserValidation (id_user_validation, username, password, User_id_user)
+VALUES (2, "shaolinmatadordeporco", "shaolin", 2);
+
+INSERT INTO UserValidation (id_user_validation, username, password, User_id_user)
+VALUES (3, "flavinhodopneu", "aro80", 3);
+
+INSERT INTO UserValidation (id_user_validation, username, password, User_id_user)
+VALUES (4, "isabelemalik", "1d4ever", 4);

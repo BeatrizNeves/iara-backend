@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import iara.converter.UserValidationConverter;
 import iara.filter.UserValidationFilter;
-import iara.model.UserValidationEntity;
 import iara.model.UserValidationRequest;
 import iara.service.UserValidationService;
 
