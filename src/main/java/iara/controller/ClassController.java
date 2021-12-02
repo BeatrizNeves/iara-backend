@@ -45,7 +45,6 @@ public class ClassController {
 	public ResponseEntity<?> getQuestionsByClassId(@PathVariable(required = true) Long classId) {
 		QuestionFilter questionFilter = QuestionFilter.builder().classId(classId).build();
 		ClassTextFilter classTextFilter = ClassTextFilter.builder().classId(classId).build();
-
 		
 		List<QuestionEntity> questions = questionService.findAll(questionFilter.get());
 		List<Long> questionIds = new ArrayList<>();

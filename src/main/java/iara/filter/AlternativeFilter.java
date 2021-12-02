@@ -28,7 +28,7 @@ public class AlternativeFilter extends RepositoryFilter<AlternativeEntity> {
             
             query.orderBy(cb.asc(root.get("id")));
             
-            Predicate genericTextFilter = in(cb, root.get("Question_id_question"), classId);
+            Predicate genericTextFilter = equal(cb, root.join("questionEntity").get("id"), classId.toString());
             
             return cb.and(genericTextFilter);
         };

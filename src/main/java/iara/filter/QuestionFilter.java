@@ -23,10 +23,9 @@ public class QuestionFilter extends RepositoryFilter<QuestionEntity> {
 	@Override
     public Specification<QuestionEntity> get() {
         return (root, query, cb) -> {
-            
             query.orderBy(cb.asc(root.get("id")));
             
-            Predicate genericTextFilter = equal(cb, root.get("Class_id_class"), classId.toString());
+            Predicate genericTextFilter = equal(cb, root.join("classEntity").get("id_class"), classId.toString());
             
             return cb.and(genericTextFilter);
         };

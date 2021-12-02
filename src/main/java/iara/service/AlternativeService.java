@@ -23,7 +23,7 @@ private final AlternativeRepository repository;
 	}
 	
 	public List<AlternativeEntity> findAll(Specification<AlternativeEntity> filter) {
-		return repository.findAll();
+		return repository.findAll(filter);
 	}
 	
 	public Optional<AlternativeEntity> findById(Long id) {
