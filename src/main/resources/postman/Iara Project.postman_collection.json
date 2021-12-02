@@ -75,14 +75,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/example/filterByName/teste",
+							"raw": "{{url}}/example/filterByName/texfgvd",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"example",
 								"filterByName",
-								"teste"
+								"texfgvd"
 							],
 							"query": [
 								{
@@ -90,6 +90,231 @@
 									"value": null,
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Class",
+			"item": [
+				{
+					"name": "Get questions by class id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/class/getCompleteClass/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class",
+								"getCompleteClass",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user on class",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/class/registerUser/userId=1&classId=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class",
+								"registerUser",
+								"userId=1&classId=2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Get course by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/course/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get popular courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/course/popular",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course",
+								"popular"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"leitura\",\r\n    \"difficultyIsEasy\": false,\r\n    \"difficultyIsMedium\": false,\r\n    \"difficultyIsHard\": false,\r\n    \"durationIsShort\": false,\r\n    \"durationIsMedium\": false,\r\n    \"durationIsLong\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/course/search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get complete class",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/class/getCompleteClass/9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class",
+								"getCompleteClass",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user on course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/course/registerUser/userId=1&courseId=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course",
+								"registerUser",
+								"userId=1&courseId=1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"sosuer\",\r\n    \"password\": \"gabrilquichida\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"usernameTeste\",\r\n    \"password\": \"senha\",\r\n    \"name\": \"Usuario teste\",\r\n    \"role\": \"aluno\",\r\n    \"logo\": \"logo teste\",\r\n    \"bio\": \"bviografia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"signup"
 							]
 						}
 					},
