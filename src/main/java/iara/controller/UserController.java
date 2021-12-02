@@ -21,4 +21,6 @@ public class UserController {
 		return ResponseEntity.ok(service.findById(userId).get());
 	}
 	
+	
+	
 }
