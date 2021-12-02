@@ -6,8 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -33,9 +32,8 @@ public class UserValidationEntity {
 	@Column(nullable=true)
 	private String password;
 	
-	@ManyToOne
-	@MapsId("id_user")
-	@JoinColumn(name="User_id_user")
+	@OneToOne
+	@JoinColumn(name="User_id_user", referencedColumnName="id_user")
 	private UserEntity user;
 	
 }

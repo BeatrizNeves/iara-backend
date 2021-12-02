@@ -6,8 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -37,9 +36,8 @@ public class AlternativeEntity {
 	@Column(nullable=true)
 	private Boolean correct;
 	
-	@ManyToOne
-	@MapsId("id_question")
-	@JoinColumn(name="Question_id_question")
+	@OneToOne
+	@JoinColumn(name="Question_id_question", referencedColumnName="id_question")
 	@JsonIgnore
 	private QuestionEntity questionEntity;
 	
