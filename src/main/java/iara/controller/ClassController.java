@@ -16,9 +16,12 @@ import iara.filter.ClassTextFilter;
 import iara.service.CourseService;
 import iara.service.QuestionService;
 import iara.model.AlternativeEntity;
+import iara.model.ClassEntity;
 import iara.model.QuestionEntity;
+import iara.model.UserHasClassEntity;
 import iara.filter.AlternativeFilter;
 import iara.service.AlternativeService;
+import iara.service.ClassService;
 import iara.service.ClassTextService;
 
 
@@ -29,6 +32,9 @@ public class ClassController {
 	
 	@Autowired
 	private CourseService courseService;
+	
+	@Autowired
+	private ClassService classService;
 	
 	@Autowired
 	private QuestionService questionService;
@@ -48,6 +54,9 @@ public class ClassController {
 	public ResponseEntity<?> getQuestionsByClassId(@PathVariable(required = true) Long classId) {
 		CompleteClassResponse completeClass = new CompleteClassResponse();
 		
+		ClassEntity classInfo = classService.findById(classId).get();
+		completeClass.setClassInfo(classInfo);
+		
 		QuestionFilter questionFilter = QuestionFilter.builder().classId(classId).build();
 		ClassTextFilter classTextFilter = ClassTextFilter.builder().classId(classId).build();
 		
@@ -62,5 +71,16 @@ public class ClassController {
 		completeClass.setTexts(classTextService.findAll(classTextFilter.get()));
 		
 		return ResponseEntity.ok(completeClass);
+	}
+	
+	@GetMapping("/registerUser/userId={userId}&classId={classId}")
+	public ResponseEntity<?> registerUser(@PathVariable(required = true) Long userId, @PathVariable(required = true) Long classId) {
+		UserHasClassEntity response = classService.registerUser(userId, classId);
+		
+		if(response == null) {
+			return ResponseEntity.badRequest().build();
+		}
+		
+		return ResponseEntity.ok(response);
 	}
 }
