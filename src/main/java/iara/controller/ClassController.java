@@ -33,7 +33,7 @@ import iara.service.ClassService;
 import iara.service.ClassTextService;
 
 
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = {"http://localhost:3000/", "https://iara-delta.vercel.app/"})
 @RestController
 @RequestMapping("/class")
 public class ClassController {

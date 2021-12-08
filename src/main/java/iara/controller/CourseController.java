@@ -22,7 +22,7 @@ import iara.model.SearchCourseRequest;
 import iara.service.ClassService;
 import iara.service.CourseService;
 
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = {"http://localhost:3000/", "https://iara-delta.vercel.app/"})
 @RestController
 @RequestMapping("/course")
 public class CourseController {
