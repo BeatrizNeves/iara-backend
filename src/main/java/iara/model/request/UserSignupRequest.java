@@ -1,4 +1,4 @@
-package iara.model;
+package iara.model.request;
 
 import javax.validation.constraints.NotBlank;
 

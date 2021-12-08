@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import iara.model.CourseEntity;
-import iara.model.UserHasCourseEntity;
+import iara.model.entity.CourseEntity;
+import iara.model.entity.UserHasCourseEntity;
 import iara.repository.CourseRepository;
 import iara.repository.UserHasCourseRepository;
 import lombok.AllArgsConstructor;

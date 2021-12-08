@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import iara.model.UserHasAnsweredEntity;
+import iara.model.entity.UserHasAnsweredEntity;
 import iara.repository.UserHasAnsweredRepository;
 import lombok.AllArgsConstructor;
 

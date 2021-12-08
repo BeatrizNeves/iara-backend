@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import iara.model.UserValidationEntity;
+import iara.model.entity.UserValidationEntity;
 
 public interface UserValidationRepository extends JpaRepository<UserValidationEntity, Long> {
 	

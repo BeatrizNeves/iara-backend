@@ -1,15 +1,11 @@
-package iara.model;
+package iara.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,24 +17,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "Alternative")
-
-public class AlternativeEntity {
-
+@Table(name = "User")
+public class UserEntity {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_alternative")
-	private Long id;
+	private Long id_user;
 	
 	@Column(nullable=true)
-	private String text;
+	private String name;
 	
 	@Column(nullable=true)
-	private Boolean correct;
+	private String role;
 	
-	@OneToOne
-	@JoinColumn(name="Question_id_question", referencedColumnName="id_question")
-	@JsonIgnore
-	private QuestionEntity questionEntity;
+	@Column(nullable=true)
+	private String logo;
 	
+	@Column(nullable=true)
+	private String bio;
+
 }

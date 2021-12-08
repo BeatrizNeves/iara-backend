@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import iara.model.AlternativeEntity;
+import iara.model.entity.AlternativeEntity;
 
 public interface AlternativeRepository extends JpaRepository<AlternativeEntity, Long> {
 

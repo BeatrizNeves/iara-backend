@@ -7,7 +7,7 @@ import javax.persistence.criteria.Predicate;
 
 import org.springframework.data.jpa.domain.Specification;
 
-import iara.model.UserValidationEntity;
+import iara.model.entity.UserValidationEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

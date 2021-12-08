@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import iara.converter.ExampleConverter;
 import iara.filter.ExampleFilter;
-import iara.model.ExampleEntity;
-import iara.model.ExampleRequest;
+import iara.model.entity.ExampleEntity;
+import iara.model.request.ExampleRequest;
 import iara.service.ExampleService;
 
 @CrossOrigin(origins = {"http://localhost:3000/", "https://iara-delta.vercel.app/"})

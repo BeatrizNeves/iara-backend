@@ -1,11 +1,16 @@
-package iara.model;
+package iara.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,29 +22,28 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "Course")
+@Table(name = "Question")
 
-public class CourseEntity {
+public class QuestionEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_course;
+	@Column(name = "id_question")
+	private Long id;
 	
 	@Column(nullable=true)
-	private int id_user_author;
+	private String title;
 	
 	@Column(nullable=true)
-	private String name;
+	private String image;
 	
 	@Column(nullable=true)
-	private String duration;
+	private String content;
 	
-	@Column(nullable=true)
-	private String difficulty;
+	@ManyToOne
+	@MapsId("id_class")
+	@JoinColumn(name="Class_id_class")
+	@JsonIgnore
+	private ClassEntity classEntity;
 	
-	@Column(nullable=true)
-	private String description;
-	
-	@Column(nullable=true)
-	private String icon;
 }

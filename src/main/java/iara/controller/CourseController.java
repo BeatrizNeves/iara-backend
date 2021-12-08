@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import iara.filter.ClassFilter;
 import iara.filter.CourseFilter;
-import iara.model.ClassEntity;
-import iara.model.CompleteCourseResponse;
-import iara.model.SearchCourseRequest;
+import iara.model.entity.ClassEntity;
+import iara.model.request.SearchCourseRequest;
+import iara.model.response.CompleteCourseResponse;
 import iara.service.ClassService;
 import iara.service.CourseService;
 

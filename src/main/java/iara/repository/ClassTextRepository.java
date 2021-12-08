@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import iara.model.ClassTextEntity;
+import iara.model.entity.ClassTextEntity;
 
 public interface ClassTextRepository extends JpaRepository<ClassTextEntity, Long> {
 	

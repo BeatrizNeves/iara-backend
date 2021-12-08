@@ -1,7 +1,7 @@
 package iara.converter;
 
-import iara.model.UserEntity;
-import iara.model.UserSignupRequest;
+import iara.model.entity.UserEntity;
+import iara.model.request.UserSignupRequest;
 
 public class UserConverter {
 

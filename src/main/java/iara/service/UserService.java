@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import iara.model.UserEntity;
+import iara.model.entity.UserEntity;
 import iara.repository.UserRepository;
 import lombok.AllArgsConstructor;
 

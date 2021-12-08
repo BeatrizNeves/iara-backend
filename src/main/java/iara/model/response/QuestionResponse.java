@@ -1,7 +1,9 @@
-package iara.model;
+package iara.model.response;
 
 import java.util.List;
 
+import iara.model.entity.AlternativeEntity;
+import iara.model.entity.QuestionEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

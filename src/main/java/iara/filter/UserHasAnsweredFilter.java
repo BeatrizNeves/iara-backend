@@ -7,7 +7,7 @@ import javax.persistence.criteria.Predicate;
 
 import org.springframework.data.jpa.domain.Specification;
 
-import iara.model.UserHasAnsweredEntity;
+import iara.model.entity.UserHasAnsweredEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -8,9 +8,9 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import iara.filter.UserHasCourseFilter;
-import iara.model.ClassEntity;
-import iara.model.UserHasClassEntity;
-import iara.model.UserHasCourseEntity;
+import iara.model.entity.ClassEntity;
+import iara.model.entity.UserHasClassEntity;
+import iara.model.entity.UserHasCourseEntity;
 import iara.repository.ClassRepository;
 import iara.repository.UserHasClassRepository;
 import iara.repository.UserHasCourseRepository;

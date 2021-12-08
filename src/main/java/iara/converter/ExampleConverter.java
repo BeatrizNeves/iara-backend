@@ -1,7 +1,7 @@
 package iara.converter;
 
-import iara.model.ExampleEntity;
-import iara.model.ExampleRequest;
+import iara.model.entity.ExampleEntity;
+import iara.model.request.ExampleRequest;
 
 public class ExampleConverter {
 

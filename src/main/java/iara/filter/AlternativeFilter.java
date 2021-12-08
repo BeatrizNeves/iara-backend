@@ -7,7 +7,7 @@ import javax.persistence.criteria.Predicate;
 
 import org.springframework.data.jpa.domain.Specification;
 
-import iara.model.AlternativeEntity;
+import iara.model.entity.AlternativeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

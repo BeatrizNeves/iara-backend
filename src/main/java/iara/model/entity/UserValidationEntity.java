@@ -1,4 +1,4 @@
-package iara.model;
+package iara.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,11 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,25 +19,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "Class")
-public class ClassEntity {
+@Table(name = "UserValidation")
+public class UserValidationEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_class;
+	private Long id_user_validation;
 	
 	@Column(nullable=true)
-	private String name;
+	private String username;
 	
 	@Column(nullable=true)
-	private String difficulty;
+	private String password;
 	
-	@Column(nullable=true)
-	private int index;
+	@OneToOne
+	@JoinColumn(name="User_id_user", referencedColumnName="id_user")
+	private UserEntity user;
 	
-	@ManyToOne
-	@MapsId("id_course")
-	@JoinColumn(name="Course_id_course")
-	@JsonIgnore
-	private CourseEntity course;
 }

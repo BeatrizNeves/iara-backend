@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import iara.model.ExampleEntity;
+import iara.model.entity.ExampleEntity;
 import iara.repository.ExampleRepository;
 import lombok.AllArgsConstructor;
 

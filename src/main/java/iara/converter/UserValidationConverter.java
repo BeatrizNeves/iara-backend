@@ -1,9 +1,9 @@
 package iara.converter;
 
-import iara.model.UserEntity;
-import iara.model.UserSignupRequest;
-import iara.model.UserValidationEntity;
-import iara.model.UserValidationRequest;
+import iara.model.entity.UserEntity;
+import iara.model.entity.UserValidationEntity;
+import iara.model.request.UserSignupRequest;
+import iara.model.request.UserValidationRequest;
 
 public class UserValidationConverter {
 

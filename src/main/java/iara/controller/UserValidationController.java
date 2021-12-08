@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import iara.filter.UserValidationFilter;
-import iara.model.UserValidationRequest;
+import iara.model.request.UserValidationRequest;
 import iara.service.UserValidationService;
 
 @CrossOrigin(origins = {"http://localhost:3000/", "https://iara-delta.vercel.app/"})

@@ -1,4 +1,4 @@
-package iara.model;
+package iara.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,20 +17,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "User_has_answered")
-public class UserHasAnsweredEntity {
+@Table(name = "User_has_course")
+public class UserHasCourseEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idUserHasAnswered;
+	private Long idUserHasCourse;
 
 	@Column(nullable=false, name="user_id_user")
 	private Long userId;
 
-	@Column(nullable=false, name="question_id_question")
-	private Long questionId;
-
-	@Column(nullable=false, name="alternative_id_alternative")
-	private Long alternativeId;
+	@Column(nullable=false, name="course_id_course")
+	private Long courseId;
 
 }
