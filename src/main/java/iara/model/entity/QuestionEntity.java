@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -40,9 +39,11 @@ public class QuestionEntity {
 	@Column(nullable=true)
 	private String content;
 	
+	@Column(nullable=true)
+	private int indeex;
+	
 	@ManyToOne
-	@MapsId("id_class")
-	@JoinColumn(name="Class_id_class")
+	@JoinColumn(name="Class_id_class", referencedColumnName="id_class")
 	@JsonIgnore
 	private ClassEntity classEntity;
 	

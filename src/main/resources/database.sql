@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `iara`.`class` (
   `id_class` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL DEFAULT NULL,
   `difficulty` VARCHAR(45) NULL DEFAULT NULL,
-  `index` INT NULL DEFAULT NULL,
+  `indeex` INT NULL DEFAULT NULL,
   `Course_id_course` INT NOT NULL,
   PRIMARY KEY (`id_class`, `Course_id_course`),
   INDEX `fk_Class_Course1_idx` (`Course_id_course` ASC) VISIBLE,
@@ -79,13 +79,12 @@ CREATE TABLE IF NOT EXISTS `iara`.`question` (
   `image` VARCHAR(45) NULL DEFAULT NULL,
   `content` VARCHAR(255) NULL DEFAULT NULL,
   `Class_id_class` INT NOT NULL,
-  `Class_Course_id_course` INT NOT NULL,
-  `index` INT NULL,
-  PRIMARY KEY (`id_question`, `Class_id_class`, `Class_Course_id_course`),
-  INDEX `fk_Question_Class1_idx` (`Class_id_class` ASC, `Class_Course_id_course` ASC) VISIBLE,
+  `indeex` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id_question`, `Class_id_class`),
+  INDEX `fk_Question_Class1_idx` (`Class_id_class` ASC) VISIBLE,
   CONSTRAINT `fk_Question_Class1`
-    FOREIGN KEY (`Class_id_class` , `Class_Course_id_course`)
-    REFERENCES `iara`.`class` (`id_class` , `Course_id_course`)
+    FOREIGN KEY (`Class_id_class`)
+    REFERENCES `iara`.`class` (`id_class`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -210,13 +209,12 @@ CREATE TABLE IF NOT EXISTS `iara`.`paragraph` (
   `content` VARCHAR(1023) NULL,
   `image` VARCHAR(63) NULL,
   `Class_id_class` INT NOT NULL,
-  `Class_Course_id_course` INT NOT NULL,
-  `index` INT NULL,
-  PRIMARY KEY (`id_paragraph`, `Class_id_class`, `Class_Course_id_course`),
-  INDEX `fk_Paragraph_Class1_idx` (`Class_id_class` ASC, `Class_Course_id_course` ASC) VISIBLE,
+  `indeex` INT NULL,
+  PRIMARY KEY (`id_paragraph`, `Class_id_class`),
+  INDEX `fk_Paragraph_Class1_idx` (`Class_id_class` ASC) VISIBLE,
   CONSTRAINT `fk_Paragraph_Class1`
-    FOREIGN KEY (`Class_id_class` , `Class_Course_id_course`)
-    REFERENCES `iara`.`class` (`id_class` , `Course_id_course`)
+    FOREIGN KEY (`Class_id_class`)
+    REFERENCES `iara`.`class` (`id_class`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -273,6 +271,20 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
+
+-- popula tabela user
+
+INSERT INTO user (name, role, logo, bio)
+VALUES ("Professor Risco", "professor", "logo", "Professor especializado em jazz. Tocou por 14 anos em banda mundo afora");
+
+INSERT INTO user (name, role, logo, bio)
+VALUES ("Jorge Aluno", "aluno", "logo", "Comecei a tocar guitarra em 2015 e quero aprender novos estilos");
+
+INSERT INTO user (name, role, logo, bio)
+VALUES ("Lucas", "aluno", "logo", "Gosto de instrumentos de percussão e quero me aprimorar na bateria.");
+
+INSERT INTO user (name, role, logo, bio)
+VALUES ("Isabelle", "aluno", "logo", "Sou muito fã de guitarristas e sou inspirada em meus ídolos, um dia irei ser capaz de tocar como eles.");
 
 -- popula tabela achievement
 
@@ -339,67 +351,67 @@ VALUES(9, "Clave de fá", "fácil", 2, 4);
 
 -- popula a tabela paragraph
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Existem 3 principais funções. Falaremos delas nas proximas aulas", "https://picsum.photos/500", 1, 1);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("Existem 3 principais funções. Falaremos delas nas proximas aulas", "https://picsum.photos/500", 1);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Transmite a sensação de repouso e finalização", "https://picsum.photos/500", 2, 1);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("Transmite a sensação de repouso e finalização", "https://picsum.photos/500", 2);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Transmite também a sensação de estabilidade", "https://picsum.photos/500", 2, 1);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("Transmite também a sensação de estabilidade", "https://picsum.photos/500", 2);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Transmite a sensação de caminhar", "https://picsum.photos/500", 3, 1);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("Transmite a sensação de caminhar", "https://picsum.photos/500", 3);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Transmite a sensação de tensão", "https://picsum.photos/500", 4, 1);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("Transmite a sensação de tensão", "https://picsum.photos/500", 4);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("É dada pelos intervalos: T T St T T T St", "https://picsum.photos/500", 5, 2);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("É dada pelos intervalos: T T St T T T St", "https://picsum.photos/500", 5);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Possui características alegres", "https://picsum.photos/500", 5, 2);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("Possui características alegres", "https://picsum.photos/500", 5);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Seu 6 grau é sua relativa menor", "https://picsum.photos/500", 5, 2);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("Seu 6 grau é sua relativa menor", "https://picsum.photos/500", 5);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("É dada pelos intervalos: T St T T St T T", "https://picsum.photos/500", 6, 2);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("É dada pelos intervalos: T St T T St T T", "https://picsum.photos/500", 6);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Possui características tristes", "https://picsum.photos/500", 6, 2);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("Possui características tristes", "https://picsum.photos/500", 6);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("É 1/4 do tempo de um compasso 4/4. Tem a seguinte figura", "https://picsum.photos/500", 7, 3);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("É 1/4 do tempo de um compasso 4/4. Tem a seguinte figura", "https://picsum.photos/500", 7);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Indica que o Sol está na 2 linha. Tem a seguinte forma", "https://picsum.photos/500", 8, 4);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("Indica que o Sol está na 2 linha. Tem a seguinte forma", "https://picsum.photos/500", 8);
 
-INSERT INTO paragraph (content, image, Class_id_class, Class_Course_id_course)
-VALUES ("Indica que o Fá está na 4 linha. Tem a seguinte forma", "https://picsum.photos/500", 9, 4);
+INSERT INTO paragraph (content, image, Class_id_class)
+VALUES ("Indica que o Fá está na 4 linha. Tem a seguinte forma", "https://picsum.photos/500", 9);
 
 -- popula tabela question
 
 INSERT INTO question
-VALUES (1, "Questão 1", "https://picsum.photos/500", "Qual das seguintes escalas é maior?", 5, 2, 1);
+VALUES (1, "Questão 1", "https://picsum.photos/500", "Qual das seguintes escalas é maior?", 5, 2);
 
 INSERT INTO question
-VALUES (2, "Questão 2", "https://picsum.photos/500", "Qual das seguintes representa um Sol maior?", 5, 2, 2);
+VALUES (2, "Questão 2", "https://picsum.photos/500", "Qual das seguintes representa um Sol maior?", 5, 2);
 
 INSERT INTO question
-VALUES (3, "Questão 1", "https://picsum.photos/500", "Qual das seguintes escalas é menor?", 6, 2, 1);
+VALUES (3, "Questão 1", "https://picsum.photos/500", "Qual das seguintes escalas é menor?", 6, 2);
 
 INSERT INTO question
-VALUES (4, "Questão 1", "https://picsum.photos/500", "Qual destas notas é um Sol?", 8, 4, 1);
+VALUES (4, "Questão 1", "https://picsum.photos/500", "Qual destas notas é um Sol?", 8, 4);
 
 INSERT INTO question
-VALUES (5, "Questão 2", "https://picsum.photos/500", "Qual destas notas é um Dó?", 8, 4, 2);
+VALUES (5, "Questão 2", "https://picsum.photos/500", "Qual destas notas é um Dó?", 8, 4);
 
 INSERT INTO question
-VALUES (6, "Questão 1", "https://picsum.photos/500", "Qual destas notas é um Sol?", 9, 4, 1);
+VALUES (6, "Questão 1", "https://picsum.photos/500", "Qual destas notas é um Sol?", 9, 4);
 
 INSERT INTO question
-VALUES (7, "Questão 2", "https://picsum.photos/500", "Qual destas notas é um Dó?", 9, 4, 2);
+VALUES (7, "Questão 2", "https://picsum.photos/500", "Qual destas notas é um Dó?", 9, 4);
 
 -- popula tabela Alternative
 
@@ -528,20 +540,6 @@ VALUES ("errada", 0, 7);
 
 INSERT INTO alternative (text, correct, Question_id_question)
 VALUES ("errada", 0, 7);
-
--- popula tabela user
-
-INSERT INTO user (name, role, logo, bio)
-VALUES ("Professor Risco", "professor", "logo", "Professor especializado em jazz. Tocou por 14 anos em banda mundo afora");
-
-INSERT INTO user (name, role, logo, bio)
-VALUES ("Jorge Aluno", "aluno", "logo", "Comecei a tocar guitarra em 2015 e quero aprender novos estilos");
-
-INSERT INTO user (name, role, logo, bio)
-VALUES ("Lucas", "aluno", "logo", "Gosto de instrumentos de percussão e quero me aprimorar na bateria.");
-
-INSERT INTO user (name, role, logo, bio)
-VALUES ("Isabelle", "aluno", "logo", "Sou muito fã de guitarristas e sou inspirada em meus ídolos, um dia irei ser capaz de tocar como eles.");
 
 -- popula tabela User_has_achievement
 

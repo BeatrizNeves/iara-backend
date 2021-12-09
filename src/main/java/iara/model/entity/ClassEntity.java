@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -36,11 +35,11 @@ public class ClassEntity {
 	private String difficulty;
 	
 	@Column(nullable=true)
-	private int index;
+	private int indeex;
 	
 	@ManyToOne
-	@MapsId("id_course")
-	@JoinColumn(name="Course_id_course")
+	@JoinColumn(name="Course_id_course", referencedColumnName="id_course")
 	@JsonIgnore
 	private CourseEntity course;
+	
 }

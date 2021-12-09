@@ -65,7 +65,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "{{url}}/example/oi",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"example",
+								"oi"
+							]
+						}
 					},
 					"response": []
 				},
@@ -125,14 +134,68 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/class/registerUser/userId=1&classId=2",
+							"raw": "{{url}}/class/registerUser/userId=1&classId=5",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"class",
 								"registerUser",
-								"userId=1&classId=2"
+								"userId=1&classId=5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user progress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":1,\r\n    \"questionId\":1,\r\n    \"alternativeId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/class/registerUserProgress",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class",
+								"registerUserProgress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create class",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"aula 1\",\r\n    \"difficulty\": \"Fácil\",\r\n    \"index\": 1,\r\n    \"courseId\": 1,\r\n    \"questions\": [\r\n        {\r\n            \"index\": 1,\r\n            \"title\": \"questão 1\",\r\n            \"image\": \"imageeem\",\r\n            \"content\": \"conteudo da questao\",\r\n            \"alternatives\": [\r\n                {\r\n                    \"text\":\"alternativa 1 da questao 1\",\r\n                    \"correct\": true\r\n                },\r\n                {\r\n                    \"text\":\"alternativa 2 da questao 1\",\r\n                    \"correct\": false\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"index\": 2,\r\n            \"title\": \"questão 2\",\r\n            \"image\": \"imageeem2\",\r\n            \"content\": \"conteudo da questao 2\",\r\n            \"alternatives\": [\r\n                {\r\n                    \"text\":\"alternativa 1 da questao 2\",\r\n                    \"correct\": false\r\n                },\r\n                {\r\n                    \"text\":\"alternativa 2 da questao 2\",\r\n                    \"correct\": true\r\n                }\r\n            ]\r\n        }\r\n\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/class/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class",
+								"create"
 							]
 						}
 					},
@@ -212,14 +275,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/class/getCompleteClass/9",
+							"raw": "{{url}}/class/getCompleteClass/2&1",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"class",
 								"getCompleteClass",
-								"9"
+								"2&1"
 							]
 						}
 					},
@@ -231,14 +294,60 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/course/registerUser/userId=1&courseId=1",
+							"raw": "{{url}}/course/registerUser/userId=1&courseId=2",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"course",
 								"registerUser",
-								"userId=1&courseId=1"
+								"userId=1&courseId=2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get complete course info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/course/getCompleteCourseInfo/courseId=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course",
+								"getCompleteCourseInfo",
+								"courseId=1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idAuthor\": 1,\r\n    \"name\": \"nome\",\r\n    \"duration\": \"Curto\",\r\n    \"difficulty\": \"Fácil\",\r\n    \"description\": \"descrição aqui\",\r\n    \"icon\": \"ícone né\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/course/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course",
+								"create"
 							]
 						}
 					},

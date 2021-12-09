@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import iara.converter.CourseConverter;
 import iara.filter.ClassFilter;
 import iara.filter.CourseFilter;
 import iara.model.entity.ClassEntity;
+import iara.model.entity.CourseEntity;
+import iara.model.request.CreateCourseRequest;
 import iara.model.request.SearchCourseRequest;
 import iara.model.response.CompleteCourseResponse;
 import iara.service.ClassService;
@@ -76,5 +79,13 @@ public class CourseController {
 		completeCourse.setCourseInfo(service.findById(courseId).get());
 		
 		return ResponseEntity.ok(completeCourse);
+	}
+	
+	@PostMapping("/create")
+	public ResponseEntity<?> createCourse(@Valid @RequestBody CreateCourseRequest request) {
+
+		CourseEntity course =CourseConverter.convertFromCreateRequest(request);
+		
+		return ResponseEntity.ok(service.save(course));
 	}
 }

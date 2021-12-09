@@ -22,11 +22,14 @@ import iara.service.QuestionService;
 import iara.service.UserHasAnsweredService;
 import iara.model.entity.AlternativeEntity;
 import iara.model.entity.ClassEntity;
+import iara.model.entity.CourseEntity;
 import iara.model.entity.QuestionEntity;
 import iara.model.entity.UserHasAnsweredEntity;
 import iara.model.entity.UserHasClassEntity;
+import iara.model.request.CreateClassRequest;
 import iara.model.request.UserHasAnsweredRequest;
 import iara.model.response.CompleteClassResponse;
+import iara.converter.ClassConverter;
 import iara.filter.AlternativeFilter;
 import iara.service.AlternativeService;
 import iara.service.ClassService;
@@ -115,5 +118,25 @@ public class ClassController {
 		userHasAnsweredEntity = userHasAnsweredService.save(userHasAnsweredEntity);
 		
 		return ResponseEntity.ok(userHasAnsweredEntity);
+	}
+	
+	@PostMapping("/create")
+	public ResponseEntity<?> createClass(@Valid @RequestBody CreateClassRequest request) {
+
+		CourseEntity course = courseService.findById((long) request.getCourseId()).get();
+		ClassEntity classEntity = ClassConverter.convertClassFromCreateRequest(request, course);
+		classService.save(classEntity);
+		
+		request.getQuestions().forEach(question -> {
+			QuestionEntity questionEntity = ClassConverter.convertQuestionFromCreateRequest(question, classEntity);
+			questionService.save(questionEntity);
+			
+			question.getAlternatives().forEach(alternative -> {
+				AlternativeEntity alternativeEntity = ClassConverter.convertAlternativeFromCreateRequest(alternative, questionEntity);
+				alternativeService.save(alternativeEntity);
+			});
+		});
+		
+		return ResponseEntity.ok(classEntity);
 	}
 }
