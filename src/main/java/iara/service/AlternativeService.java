@@ -15,7 +15,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor(onConstructor_ = {@Autowired})
 public class AlternativeService {
 	
-private final AlternativeRepository repository;
+	private final AlternativeRepository repository;
 	
 	public AlternativeEntity save(AlternativeEntity alternativeEntity) {
 		return repository.save(alternativeEntity);

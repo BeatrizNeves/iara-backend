@@ -18,8 +18,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor(onConstructor_ = {@Autowired})
 public class CourseService {
 	
-private final CourseRepository repository;
-private final UserHasCourseRepository userHasCourseRepository;
+	private final CourseRepository repository;
+	private final UserHasCourseRepository userHasCourseRepository;
 	
 	public CourseEntity save(CourseEntity courseEntity) {
 		return repository.save(courseEntity);

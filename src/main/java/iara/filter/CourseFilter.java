@@ -35,6 +35,8 @@ public class CourseFilter extends RepositoryFilter<CourseEntity> {
 	
 	private Boolean durationIsLong;
 	
+	private Long userId;
+	
 	@Override
     public Specification<CourseEntity> get() {
         return (root, query, cb) -> {
@@ -82,6 +84,17 @@ public class CourseFilter extends RepositoryFilter<CourseEntity> {
             	if(shouldFilterByDuration) {
             		return cb.and(genericTextFilter, durationFilter);
             	}
+            }
+            
+            if(userId != null) {
+                
+                Set<String> user = new HashSet<String>();
+                user.add(userId.toString());
+                
+                Predicate authorFilter = in(cb, root.get("id_user_author"), user);
+                
+                return cb.and(authorFilter);     
+            	
             }
           
             return cb.and(genericTextFilter);         

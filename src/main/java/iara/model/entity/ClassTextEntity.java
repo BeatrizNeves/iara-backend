@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -39,6 +41,7 @@ public class ClassTextEntity {
 	
 	@ManyToOne
 	@JoinColumn(name="Class_id_class", referencedColumnName = "id_class")
+	@JsonIgnore
 	private ClassEntity classEntity;
 	
 }

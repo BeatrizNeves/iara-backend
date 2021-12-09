@@ -31,13 +31,16 @@ public class UserHasCourseFilter extends RepositoryFilter<UserHasCourseEntity> {
         	Set<String> userIdList = new HashSet<String>();
         	Set<String> courseIdList = new HashSet<String>();
         	userIdList.add(userId.toString());
-        	courseIdList.add(courseId.toString());
         	
             Predicate userFilter = in(cb, root.get("userId"), userIdList);
             
-            Predicate courseFilter = in(cb, root.get("courseId"), courseIdList);
+            if(courseId != null) {
+            	courseIdList.add(courseId.toString());
+            	Predicate courseFilter = in(cb, root.get("courseId"), courseIdList);
+            	return cb.and(userFilter, courseFilter);
+            }
             
-            return cb.and(userFilter, courseFilter);
+            return cb.and(userFilter);
         };
     }
 }
