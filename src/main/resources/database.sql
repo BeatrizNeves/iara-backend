@@ -351,44 +351,44 @@ VALUES(9, "Clave de fá", "fácil", 2, 4);
 
 -- popula a tabela paragraph
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("Existem 3 principais funções. Falaremos delas nas proximas aulas", "https://picsum.photos/500", 1);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("Existem 3 principais funções. Falaremos delas nas proximas aulas", "https://picsum.photos/500", 1, 1);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("Transmite a sensação de repouso e finalização", "https://picsum.photos/500", 2);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("Transmite a sensação de repouso e finalização", "https://picsum.photos/500", 2, 1);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("Transmite também a sensação de estabilidade", "https://picsum.photos/500", 2);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("Transmite também a sensação de estabilidade", "https://picsum.photos/500", 2, 2);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("Transmite a sensação de caminhar", "https://picsum.photos/500", 3);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("Transmite a sensação de caminhar", "https://picsum.photos/500", 3, 1);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("Transmite a sensação de tensão", "https://picsum.photos/500", 4);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("Transmite a sensação de tensão", "https://picsum.photos/500", 4, 1);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("É dada pelos intervalos: T T St T T T St", "https://picsum.photos/500", 5);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("É dada pelos intervalos: T T St T T T St", "https://picsum.photos/500", 5, 1);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("Possui características alegres", "https://picsum.photos/500", 5);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("Possui características alegres", "https://picsum.photos/500", 5, 1);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("Seu 6 grau é sua relativa menor", "https://picsum.photos/500", 5);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("Seu 6 grau é sua relativa menor", "https://picsum.photos/500", 5, 2);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("É dada pelos intervalos: T St T T St T T", "https://picsum.photos/500", 6);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("É dada pelos intervalos: T St T T St T T", "https://picsum.photos/500", 6, 1);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("Possui características tristes", "https://picsum.photos/500", 6);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("Possui características tristes", "https://picsum.photos/500", 6, 2);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("É 1/4 do tempo de um compasso 4/4. Tem a seguinte figura", "https://picsum.photos/500", 7);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("É 1/4 do tempo de um compasso 4/4. Tem a seguinte figura", "https://picsum.photos/500", 7, 1);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("Indica que o Sol está na 2 linha. Tem a seguinte forma", "https://picsum.photos/500", 8);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("Indica que o Sol está na 2 linha. Tem a seguinte forma", "https://picsum.photos/500", 8, 1);
 
-INSERT INTO paragraph (content, image, Class_id_class)
-VALUES ("Indica que o Fá está na 4 linha. Tem a seguinte forma", "https://picsum.photos/500", 9);
+INSERT INTO paragraph (content, image, Class_id_class, indeex)
+VALUES ("Indica que o Fá está na 4 linha. Tem a seguinte forma", "https://picsum.photos/500", 9, 1);
 
 -- popula tabela question
 

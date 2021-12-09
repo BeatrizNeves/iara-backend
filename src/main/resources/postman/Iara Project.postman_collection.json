@@ -181,7 +181,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"aula 1\",\r\n    \"difficulty\": \"Fácil\",\r\n    \"index\": 1,\r\n    \"courseId\": 1,\r\n    \"questions\": [\r\n        {\r\n            \"index\": 1,\r\n            \"title\": \"questão 1\",\r\n            \"image\": \"imageeem\",\r\n            \"content\": \"conteudo da questao\",\r\n            \"alternatives\": [\r\n                {\r\n                    \"text\":\"alternativa 1 da questao 1\",\r\n                    \"correct\": true\r\n                },\r\n                {\r\n                    \"text\":\"alternativa 2 da questao 1\",\r\n                    \"correct\": false\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"index\": 2,\r\n            \"title\": \"questão 2\",\r\n            \"image\": \"imageeem2\",\r\n            \"content\": \"conteudo da questao 2\",\r\n            \"alternatives\": [\r\n                {\r\n                    \"text\":\"alternativa 1 da questao 2\",\r\n                    \"correct\": false\r\n                },\r\n                {\r\n                    \"text\":\"alternativa 2 da questao 2\",\r\n                    \"correct\": true\r\n                }\r\n            ]\r\n        }\r\n\r\n    ]\r\n}",
+							"raw": "{\r\n    \"name\" : \"aula 1\",\r\n    \"difficulty\": \"Fácil\",\r\n    \"index\": 1,\r\n    \"courseId\": 1,\r\n    \"paragraphs\": [\r\n        {\r\n            \"index\": 1,\r\n            \"image\": \"imagem do paragrafo 1\",\r\n            \"content\": \"paragrafo 1\"\r\n        },\r\n        {\r\n            \"index\": 2,\r\n            \"image\": \"imagem do paragrafo 2\",\r\n            \"content\": \"paragrafo 2\"\r\n        }\r\n    ],\r\n    \"questions\": [\r\n        {\r\n            \"index\": 1,\r\n            \"title\": \"questão 1\",\r\n            \"image\": \"imageeem\",\r\n            \"content\": \"conteudo da questao\",\r\n            \"alternatives\": [\r\n                {\r\n                    \"text\":\"alternativa 1 da questao 1\",\r\n                    \"correct\": true\r\n                },\r\n                {\r\n                    \"text\":\"alternativa 2 da questao 1\",\r\n                    \"correct\": false\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"index\": 2,\r\n            \"title\": \"questão 2\",\r\n            \"image\": \"imageeem2\",\r\n            \"content\": \"conteudo da questao 2\",\r\n            \"alternatives\": [\r\n                {\r\n                    \"text\":\"alternativa 1 da questao 2\",\r\n                    \"correct\": false\r\n                },\r\n                {\r\n                    \"text\":\"alternativa 2 da questao 2\",\r\n                    \"correct\": true\r\n                }\r\n            ]\r\n        }\r\n\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -275,14 +275,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/class/getCompleteClass/2&1",
+							"raw": "{{url}}/class/getCompleteClass/1&1",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"class",
 								"getCompleteClass",
-								"2&1"
+								"1&1"
 							]
 						}
 					},

@@ -22,6 +22,7 @@ import iara.service.QuestionService;
 import iara.service.UserHasAnsweredService;
 import iara.model.entity.AlternativeEntity;
 import iara.model.entity.ClassEntity;
+import iara.model.entity.ClassTextEntity;
 import iara.model.entity.CourseEntity;
 import iara.model.entity.QuestionEntity;
 import iara.model.entity.UserHasAnsweredEntity;
@@ -135,6 +136,12 @@ public class ClassController {
 				AlternativeEntity alternativeEntity = ClassConverter.convertAlternativeFromCreateRequest(alternative, questionEntity);
 				alternativeService.save(alternativeEntity);
 			});
+		});
+		
+		request.getParagraphs().forEach(paragraph -> {
+			ClassTextEntity classText = ClassConverter.convertParagraphFromCreateRequest(paragraph, classEntity);
+			classTextService.save(classText);
+			
 		});
 		
 		return ResponseEntity.ok(classEntity);

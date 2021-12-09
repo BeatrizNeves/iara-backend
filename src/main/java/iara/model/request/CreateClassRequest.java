@@ -23,5 +23,7 @@ public class CreateClassRequest {
 	private int courseId;
 	
 	private List<CreateQuestionRequest> questions;
+	
+	private List<CreateParagraphRequest> paragraphs;
 
 }

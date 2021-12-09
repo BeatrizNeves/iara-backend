@@ -2,10 +2,12 @@ package iara.converter;
 
 import iara.model.entity.AlternativeEntity;
 import iara.model.entity.ClassEntity;
+import iara.model.entity.ClassTextEntity;
 import iara.model.entity.CourseEntity;
 import iara.model.entity.QuestionEntity;
 import iara.model.request.CreateAlternativeRequest;
 import iara.model.request.CreateClassRequest;
+import iara.model.request.CreateParagraphRequest;
 import iara.model.request.CreateQuestionRequest;
 
 public class ClassConverter {
@@ -41,5 +43,16 @@ public class ClassConverter {
 		alternative.setText(request.getText());
 		
 		return alternative;
+	}
+	
+	public static ClassTextEntity convertParagraphFromCreateRequest(CreateParagraphRequest request, ClassEntity classEntity) {
+		ClassTextEntity classText = new ClassTextEntity();
+		
+		classText.setClassEntity(classEntity);
+		classText.setContent(request.getContent());
+		classText.setImage(request.getImage());
+		classText.setIndeex(request.getIndex());
+		
+		return classText;
 	}
 }
